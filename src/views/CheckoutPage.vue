@@ -8,7 +8,7 @@
                             <span id="title">Konfirmasi Order</span>
                         </b-col>
                     </b-row>
-                    <b-row class="my-5 text-left">
+                    <b-row class="my-5 text-left" id="content">
                         <b-col xl="8">
                             <b-row id="left-row">
                                 <b-col>
@@ -30,9 +30,34 @@
                             </b-row>
                         </b-col>
                         <b-col xl="4">
-                            <RincianHarga btnBookLabel="CHECK OUT" v-if="selectedCard == null || selectedCard == 0" />
                             <ModalDataDiri refName="modal-data-diri" />
-                            <DaftarAlamat v-if="selectedCard == 1" />
+                            <transition name="list" mode="out-in">
+                                <RincianHarga btnBookLabel="CHECK OUT" v-if="selectedCard == null || selectedCard == 0" />
+                            </transition>
+                            <transition name="list" mode="out-in">
+                                <DaftarAlamat v-if="selectedCard == 1" />
+                            </transition>
+                            <transition name="list" mode="out-in">
+                                <DetailOrder v-if="selectedCard == 2" />
+                            </transition>
+                            <transition name="list" mode="out-in">
+                                <HariPengambilan v-if="selectedCard == 3" />
+                            </transition>
+                            <transition name="list" mode="out-in">
+                                <WaktuPengambilan v-if="selectedCard == 4" />
+                            </transition>
+                            <transition name="list" mode="out-in">
+                                <LaundryMan v-if="selectedCard == 5" />
+                            </transition>
+                            <transition name="list" mode="out-in">
+                                <MetodePembayaran v-if="selectedCard == 6" />
+                            </transition>
+                            <transition name="list" mode="out-in">
+                                <Voucher v-if="selectedCard == 7" />
+                            </transition>
+                            <transition name="list" mode="out-in">
+                                <CSR v-if="selectedCard == 8" />
+                            </transition>
                             
                             <b-row align-h="center" class="text-center pt-4">
                                 <b-col cols="auto">
@@ -52,11 +77,17 @@
 import RincianHarga from '@/components/RincianHarga.vue';
 import ModalDataDiri from '@/components/ModalDataDiri.vue';
 import DaftarAlamat from '@/components/DaftarAlamat.vue';
+import DetailOrder from '@/components/DetailOrder.vue';
+import HariPengambilan from '@/components/HariPengambilan.vue';
+import WaktuPengambilan from '@/components/WaktuPengambilan.vue';
+import LaundryMan from '@/components/LaundryMan.vue';
+import MetodePembayaran from '@/components/MetodePembayaran.vue';
+import Voucher from '@/components/Voucher.vue';
+import CSR from '@/components/CSR.vue';
 export default {
 name: "CheckoutPage",
   data: () => {
     return {
-        kilo:0,
         qty:0,
         catatan:"",
         selectedCard: null,
@@ -77,6 +108,13 @@ name: "CheckoutPage",
       RincianHarga,
       ModalDataDiri,
       DaftarAlamat,
+      DetailOrder,
+      HariPengambilan,
+      WaktuPengambilan,
+      LaundryMan,
+      MetodePembayaran,
+      Voucher,
+      CSR,
   },
   mounted(){
   },
@@ -94,6 +132,7 @@ name: "CheckoutPage",
 };
 </script>
 <style lang="scss">
+
 #success-regis{
     // background-image: unset !important;
 }
@@ -121,6 +160,7 @@ name: "CheckoutPage",
     .card{
         box-shadow: 0px 1px 9px rgba(123, 123, 123, 0.25);
         border-radius: 12px;
+        cursor: pointer;
         .title-1{
             font-family: Poppins;
             font-style: normal;
@@ -130,9 +170,9 @@ name: "CheckoutPage",
             letter-spacing: 0.25px;
             color: #354EA8;
         }
-        .text-bold{
-            font-weight: bold;
-        }
+    }
+    .text-bold{
+        font-weight: bold;
     }
     #left-row{
         max-height: 590px;
