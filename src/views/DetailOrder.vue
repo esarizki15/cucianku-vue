@@ -11,7 +11,7 @@
                                         <b-col>
                                             <b-card :class="(selectedCard==data) ? 'activeCard ' : ''" @click="selectedCard=data">
                                                 <b-row align-v="center">
-                                                    <b-col cols="auto">
+                                                    <b-col md="auto">
                                                         <div class="blur-bg left-bg"></div>
                                                     </b-col>
                                                     <b-col class="my-2">
@@ -24,8 +24,8 @@
                                                                         </b-card-text>
                                                                     </b-col>
                                                                 </b-row>
-                                                                <b-row align-v="center">
-                                                                    <b-col>
+                                                                <b-row align-v="center" align-h="between">
+                                                                    <b-col cols="auto">
                                                                         <b-card-text class="title-2">
                                                                             <span class="text-bold">#2021080701AZYZ</span>
                                                                         </b-card-text>
@@ -179,10 +179,10 @@ name: "DetailOrder",
         color: #354EA8;
         text-decoration: underline;
     }
-    @media (max-width: 1199px) {
+    @media (max-width: 767px) {
         .left-bg{
-            height:100% !important;
             width:100% !important;
+            height:calc(129px * 1.5) !important;
         }
     }
 }
