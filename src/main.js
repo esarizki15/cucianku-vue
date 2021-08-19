@@ -9,6 +9,11 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import VueGoogleMap from 'vuejs-google-maps'
 import 'vuejs-google-maps/dist/vuejs-google-maps.css'
+import helperMixin from './mixins/helper';
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
+
+
 Vue.config.productionTip = false
 
 Vue.prototype.$http = Axios;
@@ -29,7 +34,9 @@ Vue.use(VueGoogleMap, {
   }
 })
 Vue.use(IconsPlugin);
-
+Vue.use(VueSweetalert2);
+// helperMixin
+Vue.mixin(helperMixin);
 new Vue({
   router,
   store,

@@ -116,7 +116,8 @@ name: "CheckoutPage",
       Voucher,
       CSR,
   },
-  mounted(){
+  async mounted(){
+    await this.getLocation();
   },
   methods: {
       changeSelectedCard(index){
@@ -127,7 +128,7 @@ name: "CheckoutPage",
       },
       toggleModal() {
           this.$bvModal.show('modal-data-diri');
-      }
+      },
   },
 };
 </script>

@@ -32,7 +32,7 @@
                                     </b-col>
                                 </b-row>
                             </b-card>
-                            <ModalLaundry :modalId="data" />
+                            <ModalLaundry :modalId="data.toString()" />
                         </b-col>
                     </b-row>
                     <b-row class="mt-3">

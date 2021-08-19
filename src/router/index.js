@@ -14,6 +14,7 @@ import DataDiri from '@/views/DataDiri.vue'
 import Lokasi from '@/views/Lokasi.vue'
 import OrderPage from '@/views/OrderPage.vue'
 import CheckoutPage from '@/views/CheckoutPage.vue'
+import DetailOrder from '@/views/DetailOrder.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -52,6 +53,11 @@ const routes = [
         path: '/checkout-page',
         name: 'CheckoutPage',
         component: CheckoutPage,
+      },
+      {
+        path: '/detail-order',
+        name: 'DetailOrder',
+        component: DetailOrder,
       },
     ],
   },
