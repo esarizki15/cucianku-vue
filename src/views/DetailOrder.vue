@@ -7,7 +7,7 @@
                         <b-col xl="8">
                             <b-row id="left-row">
                                 <b-col>
-                                    <b-row :class="data != 1 ? 'my-3' : 'mb-3'" v-for="(data) in 3" :key="data">
+                                    <b-row :class="data != 1 ? 'my-3' : 'mb-3'" v-for="(data) in 5" :key="data">
                                         <b-col>
                                             <b-card :class="(selectedCard==data) ? 'activeCard ' : ''" @click="selectedCard=data">
                                                 <b-row align-v="center">
@@ -48,16 +48,24 @@
                                             </b-card>
                                         </b-col>
                                     </b-row>
-                                    <b-row class="my-3">
-                                        <b-col class="col-sk">
-                                            by ordering this service, I have agree with Cucianku.com <span class="sk-1">Term and Conditions</span>
-                                        </b-col>
-                                    </b-row>
+                                </b-col>
+                            </b-row>
+                            <b-row class="my-3">
+                                <b-col class="col-sk">
+                                    by ordering this service, I have agree with Cucianku.com <span class="sk-1">Term and Conditions</span>
+                                </b-col>
+                            </b-row>
+                            <b-row class="my-3 row-total" align-h="between">
+                                <b-col cols="auto">
+                                    TOTAL SEMUA ORDERAN:
+                                </b-col>
+                                <b-col cols="auto" class="text-right text-bold">
+                                    RP 120.000
                                 </b-col>
                             </b-row>
                         </b-col>
                         <b-col xl="4">
-                            <RincianHarga />
+                            <InformasiOrder :selectedCard="selectedCard" />
                         </b-col>
                     </b-row>
                 </b-col>
@@ -66,7 +74,7 @@
     </div>
 </template>
 <script>
-import RincianHarga from '@/components/RincianHarga.vue';
+import InformasiOrder from '@/components/InformasiOrder.vue';
 export default {
 name: "DetailOrder",
   data: () => {
@@ -74,11 +82,11 @@ name: "DetailOrder",
         kilo:0,
         qty:0,
         catatan:"",
-        selectedCard: 1,
+        selectedCard: null,
     };
   },
   components:{
-      RincianHarga,
+      InformasiOrder,
   },
   mounted(){
   },
@@ -87,14 +95,14 @@ name: "DetailOrder",
           if(status == 0){
               if(this.kilo == 0) return false;
               return this.kilo = this.kilo -= 1
-          } 
+          }
           return this.kilo+=1;
       },
       changeQty(status){
           if(status == 0){
               if(this.qty == 0) return false;
               return this.qty = this.qty -= 1
-          } 
+          }
           return this.qty+=1;
       }
   },
@@ -107,12 +115,20 @@ name: "DetailOrder",
 </style>
 <style lang="scss" scoped>
 #detail-order-page{
+    $titleSize: 26.5578px;
+    .text-bold{
+        font-weight: bold;
+    }
     .activeCard{
         background: #354EA8;
         color: #FFFFFF !important;
         :not(.stepper-ctm){
             color: white !important;
         }
+    }
+    #left-row{
+        // max-height: 590px;
+        // overflow: auto;
     }
     .card{
         box-shadow: 0px 1px 9px rgba(123, 123, 123, 0.25);
@@ -121,7 +137,7 @@ name: "DetailOrder",
         .title-1{
             font-style: normal;
             font-weight: normal;
-            font-size: 26.5578px;
+            font-size: $titleSize;
             line-height: 33px;
             letter-spacing: 0.414966px;
             margin-bottom : unset;
@@ -129,7 +145,7 @@ name: "DetailOrder",
         .title-2{
             font-style: normal;
             font-weight: bold;
-            font-size: 26.5578px;
+            font-size: $titleSize;
             line-height: 40px;
             letter-spacing: 0.24898px;
         }
@@ -141,10 +157,8 @@ name: "DetailOrder",
             letter-spacing: 0.414966px;
         }
         .icon{
-            font-size: 38px;
-        }
-        .text-bold{
-            font-weight: bold;
+            font-size: $titleSize;
+            color: #3B97D3;
         }
         #left-row{
             max-height: 600px;
@@ -179,10 +193,32 @@ name: "DetailOrder",
         color: #354EA8;
         text-decoration: underline;
     }
+    .row-total{
+        background: #EBF6F5;
+        border: 1px solid #3AA39F;
+        box-sizing: border-box;
+        border-radius: 2px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 36px;
+        letter-spacing: 0.02em;
+        color: #17183B;
+        margin-inline: unset;
+    }
     @media (max-width: 767px) {
         .left-bg{
             width:100% !important;
             height:calc(129px * 1.5) !important;
+        }
+        .title-1, .title-2{
+            font-size: calc(#{$titleSize} - 4px) !important;
+        }
+        .row-total{
+            font-size: 18px;
+        }
+        .col-sk{
+            text-align: center;
         }
     }
 }
