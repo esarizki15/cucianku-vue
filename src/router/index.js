@@ -78,9 +78,9 @@ const routes = [{
   path: '/auth',
   name: 'Layout3',
   component: Layout3,
-  redirect: '/',
+  redirect: '/login',
   children: [{
-    path: '/',
+    path: '/login',
     name: 'Login',
     component: Login,
   }, {

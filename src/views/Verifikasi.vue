@@ -1,8 +1,8 @@
 <template>
-  <div id="verifikasi-page">
+  <div id="verifikasi-page" class="my-4">
     <b-container>
       <b-row align-h="center">
-        <b-col cols="5">
+        <b-col lg="5">
           <b-card class="py-5 px-3 text-center">
             <b-card-title id="title">Kode Verifikasi</b-card-title>
             <b-card-sub-title id="sub-title" class="mt-2"
@@ -29,12 +29,12 @@
         </b-col>
       </b-row>
     </b-container>
-    <Footer1 />
+    <!-- <Footer1 /> -->
   </div>
 </template>
 <script>
 // import axios from 'axios';
-import Footer1 from "@/components/Footer1.vue";
+// import Footer1 from "@/components/Footer1.vue";
 export default {
   name: "Verifikasi",
   data: () => {
@@ -50,7 +50,7 @@ export default {
     };
   },
   components: {
-    Footer1,
+    // Footer1,
   },
   mounted() {
     this.login();
@@ -63,8 +63,8 @@ export default {
       if(!isString) {
         return e.preventDefault();
       }
-      e.target.nextElementSibling.focus(); // Match with regex 
-      this.code[i] = e.target.value; 
+      e.target.nextElementSibling.focus(); // Match with regex
+      this.code[i] = e.target.value;
     },
     login() {
       console.log(this.body);

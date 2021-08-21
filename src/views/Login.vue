@@ -1,5 +1,5 @@
 <template>
-  <div id="login-page">
+  <div id="login-page" class="my-4">
     <b-container>
       <b-row>
         <b-col>
@@ -40,12 +40,12 @@
         </b-col>
       </b-row>
     </b-container>
-    <Footer1 />
+    <!-- <Footer1 /> -->
   </div>
 </template>
 <script>
 // import axios from 'axios';
-import Footer1 from "@/components/Footer1.vue";
+// import Footer1 from "@/components/Footer1.vue";
 export default {
   name: "Login",
   data: () => {
@@ -60,7 +60,7 @@ export default {
     };
   },
   components: {
-    Footer1,
+    // Footer1,
   },
   mounted() {
     this.login();
