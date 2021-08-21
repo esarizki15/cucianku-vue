@@ -1,11 +1,11 @@
 <style lang="scss">
 
 </style> <style lang="scss" scoped> #informasi-order-page {
-    height: 100%;
+    min-height: 450px;
     #row-1 {
-        height: 100%;
+        min-height: 450px;
         #col-1 {
-            height: 100%;
+            min-height: 450px;
         }
     }
     .text-bold {
@@ -391,7 +391,7 @@
                         </b-row>
                         <b-row class="mt-4" align-h="between" id="row-act">
                             <b-col v-for="(data, index) in action" :key="index" cols="auto">
-                                <b-row>
+                                <b-row @click="toggleModal(index)">
                                   <b-col>
                                     <b-row>
                                       <b-col cols="auto" class="col-act">
@@ -412,12 +412,14 @@
             </b-card>
         </b-col>
     </b-row>
+    <ModalFeedback />
 </div>
 
 </template>
 
 <script>
 
+import ModalFeedback from '@/components/ModalFeedback.vue';
 export default {
     name: "InformasiOrder",
     data: () => {
@@ -438,9 +440,13 @@ export default {
                 text: "Whatsapp",
                 img: require(`@/assets/act-1.png`),
               },
+              // {
+              //   text: "Show QR",
+              //   img: require(`@/assets/act-2.png`),
+              // },
               {
-                text: "Show QR",
-                img: require(`@/assets/act-2.png`),
+                text: "Feedback",
+                img: require(`@/assets/act-3.png`),
               },
             ],
         };
@@ -450,9 +456,17 @@ export default {
             type: Number,
         },
     },
-    components: {},
+    components: {
+      ModalFeedback,
+    },
     mounted() {},
-    methods: {},
+    methods: {
+      toggleModal(index) {
+        console.log(index);
+        console.log(this.$bvMmodal)
+          if(index == 2) this.$bvModal.show('modal-feedback');
+      },
+    },
 };
 
 </script>

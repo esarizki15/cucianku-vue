@@ -1,5 +1,5 @@
 <template>
-    <div id="modal-laundry" v-if="modalId">
+    <div id="modal-laundry" class="modalLaundry" v-if="modalId">
         <b-modal class="modal-laundry" :id="`modal-laundry-${modalId}`" :ref="`modal-laundry-${modalId}`"  hide-footer hide-header>
             <b-row @click="toggleModal(modalId, 0)" class="close-btn" align-h="end">
                 <b-col cols="auto">
@@ -36,9 +36,9 @@
             <b-row>
                 <b-col cols="auto">
                     <span class="laundry-information-content-modal">
-                        Lorem ipsum dolor sit amet, consectetur 
-                        adipiscing elit. In morbi amet ac volutpat sit at. 
-                        Aliquam fermentum tellus aliquet pharetra ut est semper. Nibh in aenean nam tristique sed 
+                        Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. In morbi amet ac volutpat sit at.
+                        Aliquam fermentum tellus aliquet pharetra ut est semper. Nibh in aenean nam tristique sed
                     </span>
                 </b-col>
             </b-row>
@@ -76,8 +76,71 @@ props:{
 };
 </script>
 <style lang="scss">
-#modal-laundry{
-}
 </style>
 <style lang="scss" scoped>
+.laundry-img-modal{
+    max-width: 100%;
+}
+.close-btn{
+    position: absolute;
+    right: 0;
+    margin-top: -35px;
+    z-index: 1;
+    margin-right: -33px !important;
+    .laundry-close-btn-modal{
+        max-height: 37px;
+    }
+}
+.laundry-rating-modal{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32.5182px;
+    line-height: 54px;
+    letter-spacing: 0.677463px;
+    color: #2D3748;
+}
+.laundry-name-modal{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32.5182px;
+    line-height: 54px;
+    letter-spacing: 0.677463px;
+    color: #2D3748;
+}
+.laundry-alamat-modal{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 21.6788px;
+    line-height: 54px;
+    letter-spacing: 0.677463px;
+    color: #2D3748;
+}
+.laundry-information-modal{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18.6854px;
+    line-height: 47px;
+    letter-spacing: 0.583919px;
+    color: #2D3748;
+}
+.laundry-information-content-modal{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16.3021px;
+    line-height: 27px;
+    letter-spacing: 0.339626px;
+    color: #2D3748;
+}
+.btn-choose{
+    background: #3B97D3;
+    box-shadow: 0px 8px 20px 2px rgba(185, 185, 185, 0.49);
+    border-radius: 2px;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 21px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    padding-block: 10px;
+}
 </style>
