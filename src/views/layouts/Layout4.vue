@@ -1,6 +1,6 @@
 <template>
-  <div id="layout-1">
-    <NavSuccessRegis />
+  <div id="layout-4">
+    <NavSuccessRegis :isHasHr="true" />
     <router-view/>
     <Footer1 />
   </div>
@@ -25,14 +25,12 @@ export default {
 }
 </script>
 <style lang="scss">
-html, body, #app, #layout-1 {
+html, body, #app, #layout-4 {
   height: 100%;
 }
 </style>
 <style lang="scss" scoped>
-#layout-1{
-  background: url("../../assets/bg-1.png") no-repeat center center fixed;
-  background-size: cover;
+#layout-4{
   display: grid;
 }
 </style>

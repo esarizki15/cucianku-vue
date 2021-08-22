@@ -84,9 +84,142 @@
       cursor: pointer;
     }
     @media (max-width: 1199px) {
+      $ratio: 0.8;
         #map {
-            min-height: 300px;
+            min-height: calc(#{$ratio} * 720px);
         }
+        #title {
+            font-size: calc(#{$ratio} * 25px);
+            line-height: calc(#{$ratio} * 16px);
+            letter-spacing: calc(#{$ratio} * 1px);
+        }
+        #icon {
+            height: 100%;
+            width: calc(#{$ratio} * 30px);
+        }
+        #textarea{
+          font-size: calc(#{$ratio} * 20px);
+          line-height: calc(#{$ratio} * 61px);
+          letter-spacing: calc(#{$ratio} * 0.767157px);
+        }
+        ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+          font-size: calc(#{$ratio} * 20px);
+          line-height: calc(#{$ratio} * 61px);
+          letter-spacing: calc(#{$ratio} * 0.767157px);
+        }
+
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+          font-size: calc(#{$ratio} * 20px);
+          line-height: calc(#{$ratio} * 61px);
+          letter-spacing: calc(#{$ratio} * 0.767157px);
+        }
+
+        ::-ms-input-placeholder { /* Microsoft Edge */
+          font-size: calc(#{$ratio} * 20px);
+          line-height: calc(#{$ratio} * 61px);
+          letter-spacing: calc(#{$ratio} * 0.767157px);
+        }
+        #btn-save{
+          font-size: calc(#{$ratio} * 24px);
+          line-height: calc(#{$ratio} * 24px);
+        }
+        .text-1{
+          font-size: calc(#{$ratio} * 24px);
+          line-height: calc(#{$ratio} * 20px);
+          letter-spacing: calc(#{$ratio} * 0.25px);
+        }
+    }
+    @media (max-width: 991px) {
+      $ratio: 0.7;
+      #map {
+          min-height: calc(#{$ratio} * 720px);
+      }
+      #title {
+          font-size: calc(#{$ratio} * 25px);
+          line-height: calc(#{$ratio} * 16px);
+          letter-spacing: calc(#{$ratio} * 1px);
+      }
+      #icon {
+          height: 100%;
+          width: calc(#{$ratio} * 30px);
+      }
+      #textarea{
+        font-size: calc(#{$ratio} * 20px);
+        line-height: calc(#{$ratio} * 61px);
+        letter-spacing: calc(#{$ratio} * 0.767157px);
+      }
+      ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        font-size: calc(#{$ratio} * 20px);
+        line-height: calc(#{$ratio} * 61px);
+        letter-spacing: calc(#{$ratio} * 0.767157px);
+      }
+
+      :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        font-size: calc(#{$ratio} * 20px);
+        line-height: calc(#{$ratio} * 61px);
+        letter-spacing: calc(#{$ratio} * 0.767157px);
+      }
+
+      ::-ms-input-placeholder { /* Microsoft Edge */
+        font-size: calc(#{$ratio} * 20px);
+        line-height: calc(#{$ratio} * 61px);
+        letter-spacing: calc(#{$ratio} * 0.767157px);
+      }
+      #btn-save{
+        font-size: calc(#{$ratio} * 24px);
+        line-height: calc(#{$ratio} * 24px);
+      }
+      .text-1{
+        font-size: calc(#{$ratio} * 24px);
+        line-height: calc(#{$ratio} * 20px);
+        letter-spacing: calc(#{$ratio} * 0.25px);
+      }
+    }
+    @media (max-width: 767px) {
+      $ratio: 0.6;
+      #map {
+          min-height: calc(#{$ratio} * 720px);
+      }
+      #title {
+          font-size: calc(#{$ratio} * 25px);
+          line-height: calc(#{$ratio} * 16px);
+          letter-spacing: calc(#{$ratio} * 1px);
+      }
+      #icon {
+          height: 100%;
+          width: calc(#{$ratio} * 30px);
+      }
+      #textarea{
+        font-size: calc(#{$ratio} * 20px);
+        line-height: calc(#{$ratio} * 61px);
+        letter-spacing: calc(#{$ratio} * 0.767157px);
+      }
+      ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        font-size: calc(#{$ratio} * 20px);
+        line-height: calc(#{$ratio} * 61px);
+        letter-spacing: calc(#{$ratio} * 0.767157px);
+      }
+
+      :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        font-size: calc(#{$ratio} * 20px);
+        line-height: calc(#{$ratio} * 61px);
+        letter-spacing: calc(#{$ratio} * 0.767157px);
+      }
+
+      ::-ms-input-placeholder { /* Microsoft Edge */
+        font-size: calc(#{$ratio} * 20px);
+        line-height: calc(#{$ratio} * 61px);
+        letter-spacing: calc(#{$ratio} * 0.767157px);
+      }
+      #btn-save{
+        font-size: calc(#{$ratio} * 24px);
+        line-height: calc(#{$ratio} * 24px);
+      }
+      .text-1{
+        font-size: calc(#{$ratio} * 24px);
+        line-height: calc(#{$ratio} * 20px);
+        letter-spacing: calc(#{$ratio} * 0.25px);
+      }
     }
 }
 
@@ -99,9 +232,9 @@
 <template>
 
 <div id="sesuaikan-lokasi">
-    <b-container fluid class="mb-5">
+    <b-container fluid class="my-5">
         <b-row align-v="center" align-h="center" class="text-center">
-            <b-col cols="10">
+            <b-col lg="10">
                 <b-row>
                     <b-col>
                         <span id="title">

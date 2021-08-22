@@ -6,13 +6,14 @@ import Verifikasi from '@/views/Verifikasi.vue'
 import Layout1 from '@/views/layouts/Layout1.vue'
 import Layout2 from '@/views/layouts/Layout2.vue'
 import Layout3 from '@/views/layouts/Layout3.vue'
+import Layout4 from '@/views/layouts/Layout4.vue'
 import SuccessRegisIndex from '@/views/SuccessRegisIndex.vue'
 import PromoPage from '@/views/PromoPage.vue'
 import SesuaikanLokasi from '@/views/SesuaikanLokasi.vue'
 import DetailPromo from '@/views/DetailPromo.vue'
 import MulaiMencuci from '@/views/MulaiMencuci.vue'
 import DataDiri from '@/views/DataDiri.vue'
-import Lokasi from '@/views/Lokasi.vue'
+  // import Lokasi from '@/views/Lokasi.vue'
 import OrderPage from '@/views/OrderPage.vue'
 import CheckoutPage from '@/views/CheckoutPage.vue'
 import DetailOrder from '@/views/DetailOrder.vue'
@@ -23,26 +24,14 @@ const routes = [{
   name: 'Home',
   component: Home
 }, {
-  path: '/success-regis',
+  path: '/layout-1',
   name: 'Layout1',
   component: Layout1,
-  redirect: '/',
+  redirect: '/success-regis',
   children: [{
-    path: '/',
+    path: '/success-regis',
     name: 'SuccessRegisIndex',
     component: SuccessRegisIndex,
-  }, {
-    path: '/promo-page',
-    name: 'PromoPage',
-    component: PromoPage,
-  }, {
-    path: '/detail-promo',
-    name: 'DetailPromo',
-    component: DetailPromo,
-  }, {
-    path: '/sesuaikan-lokasi',
-    name: 'SesuaikanLokasi',
-    component: SesuaikanLokasi,
   }, {
     path: '/order-page',
     name: 'OrderPage',
@@ -57,25 +46,21 @@ const routes = [{
     component: DetailOrder,
   }, ],
 }, {
-  path: '/data-diri',
+  path: '/layout-2',
   name: 'Layout2',
   component: Layout2,
-  redirect: '/',
+  redirect: '/data-diri',
   children: [{
-    path: '/',
+    path: '/data-diri',
     name: 'DataDiri',
     component: DataDiri,
-  }, {
-    path: '/sesuaikan-lokasi',
-    name: 'Lokasi',
-    component: Lokasi,
   }, {
     path: '/mulai-mencuci',
     name: 'MulaiMencuci',
     component: MulaiMencuci,
   }, ],
 }, {
-  path: '/auth',
+  path: '/layout-3',
   name: 'Layout3',
   component: Layout3,
   redirect: '/login',
@@ -87,6 +72,24 @@ const routes = [{
     path: '/verifikasi',
     name: 'Verifikasi',
     component: Verifikasi,
+  }, ],
+}, {
+  path: '/layout-4',
+  name: 'Layout4',
+  component: Layout4,
+  redirect: '/sesuaikan-lokasi',
+  children: [{
+    path: '/promo-page',
+    name: 'PromoPage',
+    component: PromoPage,
+  }, {
+    path: '/detail-promo',
+    name: 'DetailPromo',
+    component: DetailPromo,
+  }, {
+    path: '/sesuaikan-lokasi',
+    name: 'SesuaikanLokasi',
+    component: SesuaikanLokasi,
   }, ],
 }, {
   path: '/about',

@@ -2,7 +2,7 @@
 <div id="footer-socmed">
     <footer class="page-footer font-small my-2">
       <b-container fluid>
-          <b-row class="d-flex" align-h="center">
+          <b-row class="d-flex" align-h="center" align-v="center">
               <b-col cols="auto" md="6"  id="col-left" class="my-2">
                   <span id="footer-copyright">2021 Cucianku</span> <span class="mx-3"> | </span> <span id="bantuan"><a href="">Bantuan</a></span>
               </b-col>
@@ -16,7 +16,7 @@
 </template>
 <script>
 export default {
-  name: 'FooterSocmed',
+  name: 'Footer1',
   props: {
   },
   data: () => {
@@ -35,6 +35,7 @@ export default {
 #footer-socmed{
     .page-footer {
         position: fixed;
+        background: white;
         left: 0;
         bottom: 0;
         width: 100%;
