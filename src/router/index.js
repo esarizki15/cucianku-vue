@@ -7,6 +7,7 @@ import Layout1 from '@/views/layouts/Layout1.vue'
 import Layout2 from '@/views/layouts/Layout2.vue'
 import Layout3 from '@/views/layouts/Layout3.vue'
 import Layout4 from '@/views/layouts/Layout4.vue'
+import Layout5 from '@/views/layouts/Layout5.vue'
 import SuccessRegisIndex from '@/views/SuccessRegisIndex.vue'
 import PromoPage from '@/views/PromoPage.vue'
 import SesuaikanLokasi from '@/views/SesuaikanLokasi.vue'
@@ -32,19 +33,7 @@ const routes = [{
     path: '/success-regis',
     name: 'SuccessRegisIndex',
     component: SuccessRegisIndex,
-  }, {
-    path: '/order-page',
-    name: 'OrderPage',
-    component: OrderPage,
-  }, {
-    path: '/checkout-page',
-    name: 'CheckoutPage',
-    component: CheckoutPage,
-  }, {
-    path: '/detail-order',
-    name: 'DetailOrder',
-    component: DetailOrder,
-  }, ],
+  }],
 }, {
   path: '/layout-2',
   name: 'Layout2',
@@ -90,6 +79,24 @@ const routes = [{
     path: '/sesuaikan-lokasi',
     name: 'SesuaikanLokasi',
     component: SesuaikanLokasi,
+  }, ],
+}, {
+  path: '/layout-5',
+  name: 'Layout5',
+  component: Layout5,
+  redirect: '/sesuaikan-lokasi',
+  children: [{
+    path: '/order-page',
+    name: 'OrderPage',
+    component: OrderPage,
+  }, {
+    path: '/checkout-page',
+    name: 'CheckoutPage',
+    component: CheckoutPage,
+  }, {
+    path: '/detail-order',
+    name: 'DetailOrder',
+    component: DetailOrder,
   }, ],
 }, {
   path: '/about',
