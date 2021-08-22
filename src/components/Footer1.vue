@@ -35,7 +35,7 @@ export default {
 #footer-socmed{
     .page-footer {
         position: fixed;
-        background: white;
+        // background: white;
         left: 0;
         bottom: 0;
         width: 100%;

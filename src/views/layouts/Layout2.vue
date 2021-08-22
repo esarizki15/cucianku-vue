@@ -31,7 +31,7 @@ html, body, #app, #layout2 {
 </style>
 <style lang="scss" scoped>
 #layout2{
-  background: url("../../assets/bg-1.png") no-repeat center center fixed;
+  background: url("../../assets/bg-2.png") no-repeat center center fixed;
   background-size: cover;
   display: grid !important;
 }
