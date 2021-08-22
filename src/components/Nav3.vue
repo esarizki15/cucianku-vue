@@ -32,8 +32,7 @@
                 </b-navbar-brand>
               </b-col>
               <b-col lg="auto" class="col-menu text-right">
-                <ProfileMenu v-if="isLogin" />
-                <b-button v-else id="btn-login" to="/login">LOGIN</b-button>
+                <ProfileMenu />
               </b-col>
             </b-row>
           </b-col>
@@ -56,7 +55,7 @@ export default {
   },
   data: () => {
     return {
-      isLogin: true,
+      isLogin: false,
     };
   },
 };
@@ -122,19 +121,7 @@ export default {
       max-height: 12px;
       margin-bottom: 2.5px;
     }
-    #btn-login{
-      background: #3B97D3;
-      border-radius: 12px;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 16px;
-      line-height: 13px;
-      letter-spacing: 1.28514px;
-      text-transform: uppercase;
-      color: #FAFAFA;
-      padding-block: 15px;
-      padding-inline: 45px;
-    }
+
     @media (max-width: 991px) {
       padding-top: unset !important;
       #col-right{

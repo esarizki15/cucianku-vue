@@ -1,7 +1,9 @@
 <template>
   <div id="layout-5">
     <Nav2 :isHasHr="true" />
-    <router-view/>
+    <transition name="list" mode="out-in">
+      <router-view/>
+    </transition>
     <Footer1 />
   </div>
 </template>
@@ -31,6 +33,6 @@ html, body, #app, #layout-5 {
 </style>
 <style lang="scss" scoped>
 #layout-5{
-  // display: grid;
+  display: grid;
 }
 </style>

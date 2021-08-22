@@ -1,6 +1,6 @@
 <template>
   <div id="profile-menu">
-      <b-dropdown size="lg" right  variant="link" id="profil-dropdown" toggle-class="text-decoration-none" no-caret>
+      <b-dropdown v-if="isLogin" size="lg" right  variant="link" id="profil-dropdown" toggle-class="text-decoration-none" no-caret>
         <template #button-content>
           <b-row align-v="center" align-h="center">
             <b-col cols="auto" id="col-profile">
@@ -66,6 +66,9 @@
           </b-row>
         </b-dropdown-item>
       </b-dropdown>
+      <router-link v-else to="/login">
+        <button id="btn-login" class="btn">LOGIN</button>
+      </router-link>
   </div>
 </template>
 <script>
@@ -75,6 +78,7 @@ export default {
   },
   data: () => {
     return {
+      isLogin: false,
       menu:[
         {
           text: "Daftar Alamat",
@@ -153,6 +157,19 @@ export default {
     }
     #btn-add{
       cursor: pointer;
+    }
+    #btn-login{
+      background: #3B97D3;
+      border-radius: 12px;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 13px;
+      letter-spacing: 1.28514px;
+      text-transform: uppercase;
+      color: #FAFAFA;
+      padding-block: 15px;
+      padding-inline: 45px;
     }
     @media (max-width: 991px) {
       padding-top: unset !important;
