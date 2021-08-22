@@ -38,7 +38,7 @@ body,
 
 <div id="layout3" class="justify-content-center">
     <b-container>
-        <b-row align-h="center" class="mt-4">
+        <b-row align-h="center" class="mt-5">
             <b-col cols="auto">
                 <b-img-lazy class="img-socmed" :src="require('@/assets/logo-2.png')" alt="logo" id="logo" />
             </b-col>

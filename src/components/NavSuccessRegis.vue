@@ -12,12 +12,18 @@
         <b-navbar-nav class="ml-auto mr-3">
           <b-nav-text>Download Aplikasi di:</b-nav-text>
         </b-navbar-nav>
-        <b-navbar-brand href="#">
-          <b-img-lazy class="link-img mx-3" :src="require('@/assets/ps-1.png')" alt="ps" id="ps" />
-        </b-navbar-brand>
-        <b-navbar-brand href="#">
-          <b-img-lazy class="link-img ms-3" :src="require('@/assets/as-1.png')" alt="as" id="as" />
-        </b-navbar-brand>
+        <b-row align-h="between">
+          <b-col cols="auto">
+            <b-navbar-brand href="#">
+              <b-img-lazy class="link-img" :src="require('@/assets/ps-1.png')" alt="ps" id="ps" />
+            </b-navbar-brand>
+          </b-col>
+          <b-col cols="auto">
+            <b-navbar-brand href="#">
+              <b-img-lazy class="link-img" :src="require('@/assets/as-1.png')" alt="as" id="as" />
+            </b-navbar-brand>
+          </b-col>
+        </b-row>
       </b-collapse>
     </b-navbar>
     <hr v-if="isHasHr" />
@@ -53,6 +59,18 @@ export default {
     hr{
       border: 1px solid #8692A6;
       box-sizing: border-box;
+    }
+    .navbar{
+        align-items: flex-end;
+    }
+    @media (max-width: 991px) {
+      padding-top: unset !important;
+      #ps{
+        margin-left: unset !important;
+      }
+      .navbar-brand{
+        margin-right: unset !important;
+      }
     }
 }
 </style>
