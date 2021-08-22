@@ -31,6 +31,6 @@ html, body, #app, #layout-5 {
 </style>
 <style lang="scss" scoped>
 #layout-5{
-  display: grid;
+  // display: grid;
 }
 </style>

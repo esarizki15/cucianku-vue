@@ -1,6 +1,6 @@
 <template>
     <div id="order-page">
-        <b-container fluid class="mb-5">
+        <b-container fluid class="pb-5">
             <b-row align-v="center" align-h="center" class="text-center">
                 <b-col md="10">
                     <b-row class="my-5">
@@ -8,7 +8,7 @@
                             <span id="title">Layanan Kiloan</span>
                         </b-col>
                     </b-row>
-                    <b-row class="my-5 text-left">
+                    <b-row class="mt-5 text-left">
                         <b-col xl="8">
                             <b-row id="left-row">
                                 <b-col>
@@ -55,7 +55,7 @@
                                                                     <b-form-input min="0" class="stepper-ctm" v-model="kilo" type="number"></b-form-input>
                                                                     <span class="mx-2" @click="changeKilo(1)">
                                                                         <b-img-lazy class="btn-min-plus" :src="require('@/assets/plus-circle.png')" alt="plus-circle" />
-                                                                    </span>    
+                                                                    </span>
                                                                 </b-col>
                                                             </b-row>
                                                         </b-col>
@@ -76,7 +76,7 @@
                                                                     <b-form-input min="0" class="stepper-ctm" v-model="qty" type="number"></b-form-input>
                                                                     <span class="mx-2" @click="changeQty(1)">
                                                                         <b-img-lazy class="btn-min-plus" :src="require('@/assets/plus-circle.png')" alt="plus-circle" />
-                                                                    </span>    
+                                                                    </span>
                                                                 </b-col>
                                                             </b-row>
                                                         </b-col>
@@ -141,14 +141,14 @@ name: "OrderPage",
           if(status == 0){
               if(this.kilo == 0) return false;
               return this.kilo = this.kilo -= 1
-          } 
+          }
           return this.kilo+=1;
       },
       changeQty(status){
           if(status == 0){
               if(this.qty == 0) return false;
               return this.qty = this.qty -= 1
-          } 
+          }
           return this.qty+=1;
       }
   },
@@ -291,7 +291,8 @@ name: "OrderPage",
         }
     }
     #left-row{
-        max-height: 600px;
+        // max-height: 600px;
+        max-height: 720px;
         overflow: auto;
     }
 }
