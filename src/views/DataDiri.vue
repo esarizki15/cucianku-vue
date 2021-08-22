@@ -51,8 +51,8 @@
                             </b-col>
                         </b-row>
                         <b-row align-h="center" class="mt-4">
-                            <b-col cols="auto">
-                                <b-button id="btn-save" type="submit" variant="primary">SIMPAN</b-button>
+                            <b-col md="4">
+                                <b-button id="btn-save" class="w-100" type="submit" variant="primary">SIMPAN</b-button>
                             </b-col>
                         </b-row>
                     </b-form>
@@ -141,7 +141,6 @@ name: "DataDiri",
         font-size: 24px;
         line-height: 24px;
         color: #FAFAFA;
-        padding-inline: 7rem;
         padding-block: 1rem;
     }
 }

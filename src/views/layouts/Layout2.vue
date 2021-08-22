@@ -2,11 +2,11 @@
   <div id="layout2">
     <NavSuccessRegis :isHasHr="true" />
     <router-view/>
-    <!-- <Footer2 /> -->
+    <Footer2 />
   </div>
 </template>
 <script>
-// import Footer2 from '@/components/Footer2.vue';
+import Footer2 from '@/components/Footer2.vue';
 import NavSuccessRegis from '@/components/NavSuccessRegis.vue';
 export default {
   name: 'Layout2',
@@ -19,7 +19,7 @@ export default {
     };
   },
   components:{
-    // Footer2,
+    Footer2,
     NavSuccessRegis,
   },
 }
