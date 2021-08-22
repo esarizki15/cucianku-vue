@@ -1,13 +1,15 @@
 <template>
     <div id="mulai-mencuci">
-        <b-container>
-            <b-row align-v="center">
-                    <b-img-lazy class="img-socmed ms-3" :src="require('@/assets/maskot-1.png')" alt="maskot-1" id="maskot-1" />
+        <b-container class="my-5">
+            <b-row align-v="center" align-h="center" class="text-center">
+                <b-col xl="auto">
+                  <b-img-lazy class="ms-3" :src="require('@/assets/maskot-1.png')" alt="maskot-1" id="maskot-1" />
+                </b-col>
                 <b-col>
                     <b-row>
                         <b-col>
                             <span id="title">
-                                AYO MULAI MENCUCI
+                                Ayo mulai mencuci
                             </span>
                         </b-col>
                     </b-row>
@@ -75,6 +77,51 @@ name: "MulaiMencuci",
     }
     #maskot-1{
         max-height: 452px;
+    }
+    @media (max-width: 1191px) {
+      $ratio: 0.9;
+      #maskot-1{
+        max-height: calc(452px * #{$ratio});
+      }
+      #title{
+        font-size: calc(#{$ratio} * 57.0566px);
+        line-height: calc(#{$ratio} * 73px);
+        letter-spacing: calc(#{$ratio} * 0.320943px);
+      }
+      #content{
+          font-size: calc(#{$ratio} * 32.0943px);
+          line-height: calc(#{$ratio} * 43px);
+      }
+    }
+    @media (max-width: 991px) {
+      $ratio: 0.6;
+      #maskot-1{
+        max-height: calc(452px * #{$ratio});
+      }
+      #title{
+        font-size: calc(#{$ratio} * 57.0566px);
+        line-height: calc(#{$ratio} * 73px);
+        letter-spacing: calc(#{$ratio} * 0.320943px);
+      }
+      #content{
+          font-size: calc(#{$ratio} * 32.0943px);
+          line-height: calc(#{$ratio} * 43px);
+      }
+    }
+    @media (max-width: 767px) {
+      $ratio: 0.4;
+      #maskot-1{
+        max-height: calc(452px * #{$ratio});
+      }
+      #title{
+        font-size: calc(#{$ratio} * 57.0566px);
+        line-height: calc(#{$ratio} * 73px);
+        letter-spacing: calc(#{$ratio} * 0.320943px);
+      }
+      #content{
+          font-size: calc(#{$ratio} * 32.0943px);
+          line-height: calc(#{$ratio} * 43px);
+      }
     }
 }
 </style>

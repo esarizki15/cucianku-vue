@@ -7,7 +7,7 @@
                   <span id="sk">Dengan mendaftar, saya menyetujui</span> <span class="blue">Syarat dan Ketentuan</span> serta <span class="blue">Kebijakan Privasi</span>
               </b-col>
           </b-row>
-          <b-row align-h="center" class="mt-4 mb-5">
+          <b-row align-h="center" class="my-2">
               <b-col cols="auto">
                   <span id="footer-copyright">2021 Cucianku</span> <span class="mx-3"> | </span> <span id="bantuan"><a href="">Bantuan</a></span>
               </b-col>
@@ -80,7 +80,6 @@ export default {
           left: 0;
           bottom: 0;
           width: 100%;
-          padding-bottom: 15px;
         }
     }
 }

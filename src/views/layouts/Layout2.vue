@@ -31,11 +31,8 @@ html, body, #app, #layout2 {
 </style>
 <style lang="scss" scoped>
 #layout2{
-  background-image: url("../../assets/bg-1.png");
-    background-repeat: no-repeat;
-    // background-size: cover, contain;
-    background-size: 100% 100%;
-    display: grid;
-    // align-content: space-between;
+  background: url("../../assets/bg-1.png") no-repeat center center fixed;
+  background-size: cover;
+  display: grid !important;
 }
 </style>
