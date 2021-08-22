@@ -144,7 +144,7 @@ name: "DetailPromoPage",
                 margin-top: -10px;
                 margin-left: -20px;
                 max-height: 493px;
-                position: absolute; 
+                position: absolute;
                 bottom:0;
                 border-radius: 5.83812px;
             }
@@ -161,6 +161,10 @@ name: "DetailPromoPage",
                 margin-left: -40px !important;
             }
         }
+    }
+    @media (max-width: 991px) {
+    }
+    @media (max-width: 767px) {
     }
 }
 </style>
